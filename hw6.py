@@ -139,15 +139,16 @@ def exercise17(s, c):
 def exercise18(s_main, s_include):
     print("Exercise 18: escape-sequences: Start")
     print(f'Input: {s_main}, to include {s_include}')
-    s_escaped = "{s_main} \"{s_include}\""
+    s_escaped = f"{s_main} \"{s_include}\""
     print(f'Output: {s_escaped}')
     print("Exercise 18: Complete")
     return s_escaped
 
-def exercise19(s):
+def exercise19(s_line_top, s_line_bottom):
     print("Exercise 19: multi-line-string: Start")
-    print(f'Input: {s}')
-    s_multiline = """{s}"""
+    print(f'Input: {s_line_top}, {s_line_bottom}')
+    s_multiline = f"""{s_line_top}
+        {s_line_bottom}"""
     print(f'Output: {s_multiline}')
     print("Exercise 19: Complete")
     return s_multiline
@@ -159,6 +160,23 @@ def exercise20(a, b):
     print(f'Output: {exponent}')
     print("Exercise 20: Complete")
     return exponent
+
+def exercise21(s):
+    print("Exercise 21: is-palindrome: Start")
+    print(f'Input: {s}')
+    is_palindrome = s[::-1].lower() == s.lower()
+    print(f'Output: {is_palindrome}')
+    print("Exercise 21: Complete")
+    return is_palindrome
+
+def exercise22(str1, str2):
+    print("Exercise 22: check-anagrams: Start")
+    print(f'Input: {str1}, {str2}')
+    from collections import Counter
+    is_anagram = Counter(str1) == Counter(str2)
+    print(f'Output: {is_anagram}')
+    print("Exercise 22: Complete")
+    return is_anagram
 
 
 if __name__ == "__main__":
@@ -192,19 +210,20 @@ if __name__ == "__main__":
     print()
     exercise14('Teststring')
     print()
-    exercise15()
+    exercise15(15, 4)
     print()
-    exercise16()
+    exercise16(15, 4)
     print()
-    exercise17()
+    exercise17('Parallel', 'l')
     print()
-    exercise18()
+    exercise18('Outside text', 'Text to include')
     print()
-    exercise19()
+    exercise19('Topline string.', 'Underline string.')
     print()
-    exercise20()
+    exercise20(5, 2)
     print()
-    exercise21()
+    exercise21('racecar')
+    exercise21('bunny')
     print()
-    exercise22()
-    print()
+    exercise22('spar', 'rasp')
+    exercise22('racecar', 'bunny')
