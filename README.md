@@ -1,6 +1,5 @@
 The hw6.py script stdout is below:
 
-
 Exercise 1: two-sum: Start
 Input: 3, 5
 Output: 8
